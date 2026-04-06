@@ -1,37 +1,38 @@
 import { Page, Locator } from "@playwright/test";
 import { CartPage } from "./CartPage";
+//import { CheckoutOverview } from "./CheckoutOverviewPage";
 
 export class CheckoutInfoPage{
-    readonly continueButton: Locator;
     readonly errorMessage: Locator;
     readonly firstName: Locator;
     readonly lastName: Locator;
     readonly postalCode: Locator;
     readonly checkoutOverviewBtn: Locator;
+    readonly cancelBtn: Locator;
 
     constructor(readonly page: Page){
-        this.continueButton = page.getByTestId("continue");
         this.errorMessage = page.getByTestId("error");
         this.firstName = page.getByTestId("firstName");
         this.lastName = page.getByTestId("lastName");
         this.postalCode = page.getByTestId("postalCode");
         this.checkoutOverviewBtn = page.getByTestId("continue");
+        this.cancelBtn = page.getByTestId("cancel");
+        
     }
 
-    async fillFirstName(first: string){
+    async fillInfo(first: string, last: string, postal: string){
         await this.firstName.fill(first);
-    }
-
-    async fillLastName(last: string){
         await this.lastName.fill(last);
+        await this.postalCode.fill(postal)
     }
 
-    async fillPostalCode(code: string){
-        await this.postalCode.fill(code);
-    }
-
-    async continueToCheckoutOverview(code: string){
+    async continueToCheckoutOverview(){
         await this.checkoutOverviewBtn.click();
+        //return new CheckoutOverview(this.page);
+    }
+
+    async pressCancel(){
+        await this.cancelBtn.click();
         return new CartPage(this.page);
     }
 
