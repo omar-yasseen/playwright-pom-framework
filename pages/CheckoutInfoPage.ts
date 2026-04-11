@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 import { CartPage } from "./CartPage";
-//import { CheckoutOverview } from "./CheckoutOverviewPage";
+import { CheckoutOverviewPage } from "./CheckoutOverviewPage";
 
 export class CheckoutInfoPage{
     readonly errorMessage: Locator;
@@ -28,7 +28,7 @@ export class CheckoutInfoPage{
 
     async continueToCheckoutOverview(){
         await this.checkoutOverviewBtn.click();
-        //return new CheckoutOverview(this.page);
+        return new CheckoutOverviewPage(this.page);
     }
 
     async pressCancel(){
