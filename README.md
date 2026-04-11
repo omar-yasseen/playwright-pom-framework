@@ -7,7 +7,9 @@ The current test suite is configured against the standard Sauce Demo e-commerce 
 • Checkout Pipeline: Automates the complete cart flow (adding items, verifying cart state, filling shipping details, and confirming order completion).
 ## Tech Stack
 • Framework: Playwright
-• Language: JavaScript / Node.js
+
+• Language: Typescript
+
 • Assertions: Playwright Test Runner
 ## How to Run Locally
 1. Clone the repository:
