@@ -4,6 +4,7 @@ This repository contains a localized, high-speed End-to-End (E2E) automated test
 The current test suite is configured against the standard Sauce Demo e-commerce architecture.
 ## Core Flows Automated
 • Authentication Pipeline: Verifies successful user login, session state persistence, and error handling for invalid credentials.
+
 • Checkout Pipeline: Automates the complete cart flow (adding items, verifying cart state, filling shipping details, and confirming order completion).
 ## Tech Stack
 • Framework: Playwright
